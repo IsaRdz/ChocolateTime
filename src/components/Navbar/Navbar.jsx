@@ -9,7 +9,7 @@ const Navbar = () => {
     <>
       <div className={containerNavbar}>
         <img
-          src="https://res.cloudinary.com/dhpyauyit/image/upload/v1680464315/E-commerce%20ChocoLove/logoChocolate_fla92l.png"
+          src="https://res.cloudinary.com/dhpyauyit/image/upload/v1680560000/E-commerce%20ChocoLove/logoChocolate_time_wrnilo.png"
           alt="Logo"
           className={logo}
         />
