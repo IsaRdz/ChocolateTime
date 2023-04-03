@@ -1,0 +1,13 @@
+.cartWidgetContainer:first-child {
+  color: rgb(143, 68, 15);
+}
+
+.cartWidgetContainer span {
+  color: whitesmoke;
+  font-size: smaller;
+  position: relative;
+  top: -20px;
+  background-color: rgb(2, 93, 2);
+  border-radius: 50%;
+  padding: 4px 7px;
+}

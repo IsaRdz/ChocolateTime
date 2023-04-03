@@ -1,0 +1,17 @@
+.greetingContainer {
+  width: 100%;
+  height: 50vh;
+  margin: 0;
+  background-image: url("https://res.cloudinary.com/dhpyauyit/image/upload/v1680556236/E-commerce%20ChocoLove/vista-superior-deliciosos-muffins-chispas-chocolate_ondspv.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.greetingContainer h2 {
+  color: white;
+  padding: 6vh 10vw;
+  backdrop-filter: blur(10px);
+}
