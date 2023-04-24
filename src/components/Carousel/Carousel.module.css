@@ -1,0 +1,5 @@
+.greetingTitle {
+  color: white;
+  padding: 4vh 7vw;
+  backdrop-filter: blur(10px);
+}

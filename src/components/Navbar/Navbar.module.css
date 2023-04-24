@@ -1,34 +1,24 @@
-.containerNavbar {
-  background-color: blanchedalmond;
-  display: flex;
-  justify-content: space-between;
-  padding: 2vh 4vw;
-}
 .logo {
-  width: 10vw;
+  width: 15vh;
+  margin: 2vh;
 }
-.menu {
-  width: 60%;
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: space-evenly;
-  align-items: last baseline;
+.links {
+  text-decoration: inherit;
+  color: inherit;
 }
-
-.menu li {
-  list-style: none;
-  font-weight: bold;
+.menuItem {
+  padding-left: 15px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  text-align: left;
   color: rgb(143, 68, 15);
 }
-.menu li:hover {
-  color: rgb(213, 106, 29);
-  cursor: pointer;
+.menuNavbar {
+  margin: 3vh auto;
+  color: rgb(143, 68, 15);
 }
-.cartWidgetContainer {
-  width: 10vw;
-  display: flex;
-  justify-content: center;
-  align-items: last baseline;
-  margin-bottom: 2vh;
+@media (width < 900px) {
+  .logo {
+    display: none;
+  }
 }
