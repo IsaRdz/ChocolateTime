@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Chocolate - Ecommerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](https://res.cloudinary.com/dhpyauyit/image/upload/v1684186370/E-commerce%20ChocoLove/logo2_mrvamz.png)
 
-## Available Scripts
+#### Proyecto final del curso de React JS dictado por Prof. Jorge Duje en Coderhouse.
 
-In the project directory, you can run:
+#### Se desarrolló un Ecommerce con la temática de venta de chocolates. En el mismo se puede acceder a todos los productos desde la Home y filtrar los chocolates por categoría, las cuales se encuentran disponibles en el navbar.
+
+#### Se puede acceder al detalle de cada producto y agregar la cantidad que el usuario desee al carrito.
+
+#### En el detalle del carrito se puede observar el total de la compra y se pueden eliminar productos y vaciar el carrito.
+
+#### Al finalizar la compra el usuario deberá completar un formulario con sus datos y finalmente recibirá la confirmación de la compra con el ID correspondiente.
+
+## Tecnologías utilizadas
+
+## Descargar repositorio
+
+Ejecutar en terminal
+
+```
+git clone https://github.com/IsaRdz/ChocolateTime.git
+```
+
+## Ejecución
+
+Una vez clonado el repositorio en nuestro dispositivo, en la terminal ejecutar el siguiente comando:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+El proyecto se abrirá en el navegador en el puerto local [http://localhost:3000](http://localhost:3000)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Variables de entorno
 
-### `npm test`
+Si desea utilizar este proyecto debe crear el archivo .env y asignar las siguientes variables de entorno:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- REACT_APP_APIKEY=
+- REACT_APP_AUTHDOMAIN=
+- REACT_APP_PROJECTID=
+- REACT_APP_STORAGEBUCKET=
+- REACT_APP_MESSAGINGSENDERID=
+- REACT_APP_APPID=
 
-### `npm run build`
+## Librerías utilizadas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Material UI
+- Sweet Alert
+- Formik
+- Yup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deploy del proyecto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Chocolate](...)

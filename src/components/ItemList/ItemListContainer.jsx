@@ -1,31 +1,60 @@
 import React, { useEffect, useState } from "react";
-import { products } from "../../products";
 import ItemList from "./ItemList";
 
 import { useParams } from "react-router-dom";
 import Carousel from "../Carousel/Carousel";
+import { MoonLoader } from "react-spinners";
+import { db } from "../../firebaseConfig";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [greeting] = useState("Bienvenido a Chocolate");
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
   const { categoryName } = useParams();
 
   useEffect(() => {
-    const filterProducts = products.filter(
-      (product) => product.category === categoryName
-    );
+    let consulta;
+    const dataCollection = collection(db, "products");
 
-    const tarea = new Promise((resolve, reject) => {
-      resolve(categoryName ? filterProducts : products);
-    });
+    if (categoryName) {
+      const dataCollectionFiltered = query(
+        dataCollection,
+        where("category", "==", categoryName)
+      );
+      consulta = dataCollectionFiltered;
+    } else {
+      consulta = dataCollection;
+    }
 
-    tarea.then((res) => setData(res)).catch((error) => console.log(error));
+    getDocs(consulta)
+      .then((res) => {
+        const products = res.docs.map((product) => {
+          return {
+            ...product.data(),
+            id: product.id,
+          };
+        });
+        setData(products);
+      })
+      .catch((err) => console.log(err));
   }, [categoryName]);
 
   return (
-    <div>
+    <div style={{ backgroundColor: "whitesmoke", height: "100vh" }}>
       <Carousel greeting={greeting} />
+      {data.length === 0 && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "20vh",
+            alignItems: "center",
+          }}
+        >
+          <MoonLoader color="#357a38" />
+        </div>
+      )}
       <ItemList data={data} />
     </div>
   );

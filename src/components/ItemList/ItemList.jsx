@@ -10,7 +10,8 @@ import Grid from "@mui/joy/Grid";
 import { Link } from "react-router-dom";
 
 const ItemList = ({ data }) => {
-  const Item = styled(Sheet)(({ theme }) => ({
+  //const Item =
+  styled(Sheet)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: "center",
@@ -26,7 +27,7 @@ const ItemList = ({ data }) => {
         margin: "0 auto",
         justifyContent: "center",
         padding: "4vh 4vw",
-        backgroundColor: "blanchedalmond",
+        backgroundColor: "whitesmoke",
       }}
     >
       {data?.map((product) => (
@@ -45,7 +46,16 @@ const ItemList = ({ data }) => {
               "&:hover": { boxShadow: "1px 1px 6px gray" },
             }}
           >
-            <Typography level="h2" fontSize="lg" sx={{ mb: 0.5 }}>
+            <Typography
+              level="h2"
+              fontSize="lg"
+              sx={{
+                mb: 0.5,
+                minHeight: 40,
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
               {product.title}
             </Typography>
             <AspectRatio minHeight="120px" maxHeight="200px" sx={{ my: 2 }}>
@@ -56,7 +66,7 @@ const ItemList = ({ data }) => {
                 alt=""
               />
             </AspectRatio>
-            <Typography level="body2" sx={{ mb: 1.5 }}>
+            <Typography level="body2" sx={{ mb: 1.5, minHeight: 50 }}>
               {product.description}{" "}
             </Typography>
             <Box

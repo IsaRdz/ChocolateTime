@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import { Outlet, Link } from "react-router-dom";
 import {
@@ -9,14 +9,32 @@ import {
   Menu,
   MenuItem,
   Toolbar,
-  Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import styles from "./Navbar.module.css";
+import { db } from "../../firebaseConfig";
+import { getDocs, collection } from "firebase/firestore";
 
 let { links, menuItem, menuNavbar, logo } = styles;
 const Navbar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const categoriesCollection = collection(db, "categories");
+    getDocs(categoriesCollection)
+      .then((res) => {
+        let categoriesResult = res.docs.map((category) => {
+          return {
+            ...category.data(),
+            id: category.id,
+          };
+        });
+        setCategories(categoriesResult);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -87,18 +105,17 @@ const Navbar = () => {
                     paddingLeft: 10,
                   }}
                 >
-                  <Link className={links} to="/">
-                    <Typography className={menuItem}>Todassss</Typography>
-                  </Link>
-                  <Link className={links} to="/category/Bombones">
-                    <Typography className={menuItem}>Bombones</Typography>
-                  </Link>
-                  <Link className={links} to="/category/Trufas">
-                    <Typography className={menuItem}>Trufas</Typography>
-                  </Link>
-                  <Link className={links} to="/category/Tabletas">
-                    <Typography className={menuItem}>Tabletas</Typography>
-                  </Link>
+                  {categories.map((category) => {
+                    return (
+                      <Link
+                        key={category.id}
+                        to={category.path}
+                        className={menuItem}
+                      >
+                        {category.title}
+                      </Link>
+                    );
+                  })}
                 </MenuItem>
               </Menu>
             </Box>

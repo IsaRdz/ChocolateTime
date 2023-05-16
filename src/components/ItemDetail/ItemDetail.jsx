@@ -1,50 +1,69 @@
-import { AspectRatio, Box, Button, Typography } from "@mui/joy";
+import { AspectRatio, Box, Typography } from "@mui/joy";
 import React from "react";
 import { Link } from "react-router-dom";
-const ItemDetail = ({ product }) => {
+import CounterContainer from "../Counter/CounterContainer";
+const ItemDetail = ({ product, onAdd, totalQuantity }) => {
   return (
     <div>
       <Box
         sx={{
-          width: "80%",
           display: "flex",
           flexWrap: "wrap",
-          margin: "10vh auto",
-          backgroundColor: "whitesmoke",
-          padding: 5,
-          borderRadius: 15,
-          boxShadow: "2px 2px 5px gray",
+          margin: "5vh 8vw",
+          justifyContent: "space-evenly",
         }}
       >
         <AspectRatio
           sx={{
-            width: 350,
-            borderRadius: 15,
-            margin: "auto auto",
+            width: "400px",
+            borderRadius: 10,
+            alignSelf: "center",
+            margin: "0 auto",
           }}
         >
           <img src={product.img} alt="" />
         </AspectRatio>
-        <Box sx={{ textAlign: "center", margin: "1vh auto" }}>
-          <Typography level="h2">{product.title} </Typography>
-          <Typography fontSize="lg" sx={{ my: 3, maxWidth: 500 }}>
-            {product.description}
-          </Typography>
-          <Typography level="h3" sx={{ my: 5 }}>
-            ${product.price} / 100 gr.
-          </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "end",
-              justifyContent: "space-between",
-              padding: "0 3vw",
-            }}
-          >
-            <Link to="/">
-              <Typography>Volver</Typography>
-            </Link>
-            <Button color="success">Agregar al carrito</Button>
+        <Box
+          sx={{
+            width: "550px",
+            display: "flex",
+            flexWrap: "wrap",
+            margin: " 0 auto",
+            backgroundColor: "whitesmoke",
+            padding: 5,
+            borderRadius: 15,
+            boxShadow: "2px 2px 5px gray",
+          }}
+        >
+          <Box sx={{ textAlign: "center", margin: "1vh auto" }}>
+            <Typography level="h2">{product.title} </Typography>
+
+            <Typography fontSize="lg" sx={{ my: 3, maxWidth: 500 }}>
+              {product.description}
+            </Typography>
+            <Typography level="h3" sx={{ my: 2 }}>
+              ${product.price}
+            </Typography>
+            {product.stock > 0 ? (
+              <CounterContainer
+                stock={product.stock}
+                onAdd={onAdd}
+                initial={totalQuantity}
+              />
+            ) : (
+              <h3 style={{ color: "gray" }}>Sin stock</h3>
+            )}
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "end",
+                justifyContent: "end",
+              }}
+            >
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <Typography>Volver</Typography>
+              </Link>
+            </Box>
           </Box>
         </Box>
       </Box>
