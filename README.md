@@ -57,4 +57,4 @@ Si desea utilizar este proyecto debe crear el archivo .env y asignar las siguien
 
 ## Sitio
 
-![](https://res.cloudinary.com/dhpyauyit/video/upload/v1684539936/readme_xwe4vv.mp4)
+![](https://res.cloudinary.com/dhpyauyit/image/upload/v1684540283/Sitio_wzsrub.png)
