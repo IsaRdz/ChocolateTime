@@ -14,6 +14,9 @@
 
 ## Tecnologías utilizadas
 
+- React, CSS, JavaScript
+- Firebase
+
 ## Descargar repositorio
 
 Ejecutar en terminal
@@ -50,4 +53,8 @@ Si desea utilizar este proyecto debe crear el archivo .env y asignar las siguien
 
 ## Deploy del proyecto
 
-[Chocolate](...)
+[Chocolate](https://chocolate-time-jml77q77p-isardz.vercel.app/)
+
+## Sitio
+
+![](https://res.cloudinary.com/dhpyauyit/video/upload/v1684539936/readme_xwe4vv.mp4)
