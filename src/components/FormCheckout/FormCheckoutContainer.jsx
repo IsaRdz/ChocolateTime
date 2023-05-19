@@ -12,6 +12,8 @@ import {
   updateDoc,
   doc,
 } from "firebase/firestore";
+import { Button } from "@mui/joy";
+import { Link } from "react-router-dom";
 
 const FormCheckoutContainer = () => {
   const { cart, totalPrice, cleanCart } = useContext(CartContext);
@@ -86,10 +88,10 @@ const FormCheckoutContainer = () => {
           />
           <h1>¡Gracias por su compra!</h1>
           <h2>Ya estamos preparando tu pedido</h2>
-          <h3 style={{ margin: "4vh auto" }}>
-            {" "}
-            Su código de orden es: {orderId}{" "}
-          </h3>
+          <h3 style={{ margin: "4vh auto" }}> Código de pedido: {orderId} </h3>
+          <Link to="/">
+            <Button color="success">Volver a la tienda</Button>
+          </Link>
         </div>
       ) : (
         <FormCheckout

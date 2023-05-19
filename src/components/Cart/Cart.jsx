@@ -41,15 +41,25 @@ const Cart = ({ cart, cleanCart, deleteProductById, total, navigate }) => {
                       alignItems: "center",
                     }}
                   >
-                    <img
-                      src={e.img}
-                      alt=""
+                    <div
                       style={{
-                        width: "120px",
-                        borderRadius: "5px",
+                        width: "130px",
+                        height: "80px",
                         marginRight: "30px",
+                        overflow: "hidden",
                       }}
-                    />
+                    >
+                      <img
+                        src={e.img}
+                        alt=""
+                        style={{
+                          borderRadius: "5px",
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                    </div>
                     <h3>{e?.title} </h3>
                   </div>
                   <h3>$ {e.price}</h3>
